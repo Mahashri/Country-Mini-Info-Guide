@@ -1,0 +1,196 @@
+/* General styles */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #4d49ff, #64c0fa, #ff00cc);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow-y: scroll;
+    /* Add scroll option for the whole page */
+    animation: colorChange 10s infinite;
+    /* Set a minimum height to ensure content visibility */
+    min-height: calc(100vh - 20px);
+}
+
+@keyframes colorChange {
+    0% {
+        background: linear-gradient(to bottom right, #4d49ff, #64c0fa);
+    }
+    50% {
+        background: linear-gradient(to bottom right, #64c0fa, #ff00cc);
+    }
+    100% {
+        background: linear-gradient(to bottom right, #ff00cc, #4d49ff);
+    }
+}
+
+footer {
+    background: linear-gradient(to right, #4d49ff, #64c0fa, #ff00cc);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+}
+
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    /* Align items horizontally center */
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#country-inp {
+    flex: 1;
+    padding: 12px;
+    /* Increase padding to adjust size */
+    border: none;
+    border-radius: 20px;
+    /* Adjust border radius for the search input */
+    font-size: 16px;
+    /* Increase font size */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: background-color 0.3s ease;
+    max-width: 320px;
+    /* Increase maximum width */
+    /* Reduce the maximum width of the search input */
+}
+
+#country-inp::placeholder {
+    color: #aaa;
+}
+
+#search-btn {
+    padding: 8px 16px;
+    background-color: #3d64e6;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    /* Adjust border radius for the search button */
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#search-btn:hover {
+    background-color: #3459c6;
+}
+
+#result {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.content-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    /* Add margin-bottom for space between content items */
+}
+
+.label {
+    font-weight: bold;
+    min-width: 100px;
+    /* Set a minimum width for labels */
+    flex: 0 0 auto;
+    /* Prevent labels from flexing */
+}
+
+.value {
+    text-align: right;
+    flex: 1;
+}
+
+
+/* Optional: Adjust the minimum width of labels for better alignment */
+
+.flag-img {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #4d49ff, #64c0fa, #ff00cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container p {
+    text-align: left;
+    margin-bottom: 10px;
+    /* Align text properly except the country name */
+}
+
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        /* Auto height for responsiveness */
+    }
+}
+
+.container {
+    position: relative;
+    /* Add relative positioning to the container */
+    width: 90%;
+    /* Increase the width */
+    height: 600px;
+    /* Increase the height */
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: left;
+    max-width: 600px;
+    /* Increase the max-width */
+}
+
+.done-by {
+    position: absolute;
+    bottom: -180px;
+    /* Adjust the position */
+    right: 37px;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8px 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.done-by a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.done-by a:hover {
+    color: #ff00cc;
+    text-decoration: underline;
+}
