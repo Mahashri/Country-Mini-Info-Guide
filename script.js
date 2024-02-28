@@ -1,5 +1,7 @@
 let searchBtn = document.getElementById("search-btn");
 let countryInp = document.getElementById("country-inp");
+let result = document.getElementById("result"); // Add this line to access the result container
+
 
 // Function to convert numbers to words
 function numberToWords(number) {
@@ -43,6 +45,41 @@ function numberToWords(number) {
 
     return words.trim();
 }
+
+function fetchAutocompleteSuggestions(input) {
+    let finalURL = `https://restcountries.com/v3.1/name/${input}?fields=name`;
+    fetch(finalURL)
+        .then((response) => response.json())
+        .then((data) => {
+            // Clear previous suggestions
+            result.innerHTML = "";
+            // Display suggestions
+            data.forEach((country) => {
+                let suggestion = document.createElement("div");
+                suggestion.textContent = country.name.common;
+                suggestion.addEventListener("click", () => {
+                    countryInp.value = country.name.common;
+                    fetchData();
+                    result.innerHTML = ""; // Clear suggestions after selection
+                });
+                result.appendChild(suggestion);
+            });
+        })
+        .catch((error) => {
+            console.error("Error fetching autocomplete suggestions:", error);
+            result.innerHTML = "<p>Error fetching suggestions</p>";
+        });
+}
+
+// Event listener for input changes to fetch autocomplete suggestions
+countryInp.addEventListener("input", () => {
+    let inputValue = countryInp.value;
+    if (inputValue.length > 0) {
+        fetchAutocompleteSuggestions(inputValue);
+    } else {
+        result.innerHTML = ""; // Clear suggestions when input is empty
+    }
+});
 
 
 function fetchData() {
