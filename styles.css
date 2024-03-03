@@ -1,5 +1,4 @@
 /* General styles */
-
 * {
     padding: 0;
     margin: 0;
@@ -29,15 +28,12 @@ body {
     }
 }
 
-
 /* Main container */
-
 .container {
     position: relative;
-    width: 400px;
+    width: 90%;
+    max-width: 600px;
     height: auto;
-    max-height: 800px;
-    /* Set maximum height */
     margin: 20px auto;
     padding: 20px;
     border-radius: 15px;
@@ -49,9 +45,7 @@ body {
     /* Enable vertical scrollbar */
 }
 
-
 /* Search wrapper */
-
 .search-wrapper {
     display: flex;
     justify-content: center;
@@ -92,14 +86,11 @@ body {
     background-color: #3459c6;
 }
 
-
 /* Result */
-
 #result {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    max-width: 600px;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -127,9 +118,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-
 /* Footer */
-
 footer {
     position: fixed;
     bottom: 10px;
@@ -142,9 +131,7 @@ footer {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Done by */
-
 .done-by {
     position: absolute;
     bottom: -40px;
@@ -166,4 +153,12 @@ footer {
 .done-by a:hover {
     color: #ff00cc;
     text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        max-width: 400px;
+    }
 }
