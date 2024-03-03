@@ -9,13 +9,12 @@
 body {
     background: linear-gradient(to right, #4d49ff, #64c0fa, #ff00cc);
     padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
     overflow-y: scroll;
-    /* Add scroll option for the whole page */
     animation: colorChange 10s infinite;
-    /* Set a minimum height to ensure content visibility */
     min-height: calc(100vh - 20px);
+    backdrop-filter: blur(10px);
+    /* Apply blur effect to body */
 }
 
 @keyframes colorChange {
@@ -30,38 +29,48 @@ body {
     }
 }
 
-footer {
-    background: linear-gradient(to right, #4d49ff, #64c0fa, #ff00cc);
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    text-align: center;
+
+/* Main container */
+
+.container {
+    position: relative;
+    width: 400px;
+    height: auto;
+    max-height: 800px;
+    /* Set maximum height */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    /* Apply blur effect to container */
+    overflow-y: auto;
+    /* Enable vertical scrollbar */
 }
+
+
+/* Search wrapper */
 
 .search-wrapper {
     display: flex;
     justify-content: center;
-    /* Align items horizontally center */
-    margin-bottom: 10px;
-    position: relative;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 #country-inp {
     flex: 1;
     padding: 12px;
-    /* Increase padding to adjust size */
     border: none;
     border-radius: 20px;
-    /* Adjust border radius for the search input */
     font-size: 16px;
-    /* Increase font size */
     outline: none;
     background-color: rgba(255, 255, 255, 0.7);
     transition: background-color 0.3s ease;
     max-width: 320px;
-    /* Increase maximum width */
-    /* Reduce the maximum width of the search input */
+    backdrop-filter: blur(5px);
+    /* Apply blur effect to input */
 }
 
 #country-inp::placeholder {
@@ -69,12 +78,11 @@ footer {
 }
 
 #search-btn {
-    padding: 8px 16px;
+    padding: 12px 20px;
     background-color: #3d64e6;
     color: #fff;
     border: none;
     border-radius: 20px;
-    /* Adjust border radius for the search button */
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
@@ -84,46 +92,27 @@ footer {
     background-color: #3459c6;
 }
 
+
+/* Result */
+
 #result {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 600px;
     margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    /* Apply blur effect to result */
 }
-
-.content-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    /* Add margin-bottom for space between content items */
-}
-
-.label {
-    font-weight: bold;
-    min-width: 100px;
-    /* Set a minimum width for labels */
-    flex: 0 0 auto;
-    /* Prevent labels from flexing */
-}
-
-.value {
-    text-align: right;
-    flex: 1;
-}
-
-
-/* Optional: Adjust the minimum width of labels for better alignment */
 
 .flag-img {
     display: block;
     width: 100%;
     max-width: 150px;
     height: auto;
-    margin: 0 auto;
-    border-radius: 5px;
+    margin: 0 auto 15px;
+    border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -132,50 +121,34 @@ footer {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     background: linear-gradient(to right, #4d49ff, #64c0fa, #ff00cc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.container p {
-    text-align: left;
-    margin-bottom: 10px;
-    /* Align text properly except the country name */
+
+/* Footer */
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #4d49ff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 
-/* Responsive Styles */
-
-@media screen and (max-width: 768px) {
-    .container {
-        width: 100%;
-        /* Auto height for responsiveness */
-    }
-}
-
-.container {
-    position: relative;
-    /* Add relative positioning to the container */
-    width: 90%;
-    /* Increase the width */
-    height: 600px;
-    /* Increase the height */
-    margin: 10px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    text-align: left;
-    max-width: 600px;
-    /* Increase the max-width */
-}
+/* Done by */
 
 .done-by {
     position: absolute;
-    bottom: -180px;
-    /* Adjust the position */
-    right: 37px;
+    bottom: -40px;
+    right: 20px;
     font-size: 14px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.8);
