@@ -31,3 +31,10 @@ No backend setup is required unless additional services are introduced in the so
 
 ## Project status
 Frontend demonstration. Consult the source files for the exact country fields and interactions currently implemented.
+
+
+---
+
+## Live Demo
+
+[Open the deployed application](https://mahashri.github.io/Country-Mini-Info-Guide/)
